@@ -4,12 +4,12 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>org.neo4j.example</groupId>
-  <artifactId>procedure-template</artifactId>
+  <artifactId>ssr-plugin</artifactId>
   <version>1.0.0-SNAPSHOT</version>
 
   <packaging>jar</packaging>
-  <name>Neo4j Procedure Template</name>
-  <description>A template project for building a Neo4j Procedure</description>
+  <name>Neo4j Server Side Routing Plugin</name>
+  <description>A plugin to enable server side routing (only) on neo4j://</description>
 
   <properties>
     <java.version>11</java.version>
@@ -18,8 +18,8 @@
     
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-    <neo4j.version>4.1.3</neo4j.version>
-    <neo4j-java-driver.version>4.1.1</neo4j-java-driver.version>
+    <neo4j.version>4.2.1</neo4j.version>
+    <neo4j-java-driver.version>4.2.0</neo4j-java-driver.version>
     <junit-jupiter.version>5.7.0</junit-jupiter.version>
     <maven-shade-plugin.version>3.2.1</maven-shade-plugin.version>
     <maven-compiler-plugin.version>3.8.1</maven-compiler-plugin.version>
@@ -34,10 +34,10 @@
            deployed in a Neo4j Instance, the API will be provided
            by Neo4j. If you add non-Neo4j dependencies to this
            project, their scope should normally be `compile` -->
-      <groupId>org.neo4j</groupId>
-      <artifactId>neo4j</artifactId>
-      <version>${neo4j.version}</version>
-      <scope>provided</scope>
+        <groupId>com.neo4j</groupId>
+        <artifactId>neo4j-enterprise</artifactId>
+        <version>${neo4j.version}</version>
+        <scope>provided</scope>
     </dependency>
 
     <!-- Test Dependencies -->
